@@ -91,11 +91,25 @@ To consume by postman, the Accept key and the application/json value must be add
 
       request:
       '{
-      "name": "Madisyn Bodt",
-      "email": "thaag@gmail.com",
-      "phone": "+16466500386",
-      "department_id": "3"
+      "name": ""
       }'
+### Departments
+-     GET /api/departments
+      --header 'Authorization: Bearer 13|kcXBU5awrcEDBCdCwVbeEzgZUuOn2UxYhEDjEN5Wa5a5279a' 
+### By Departments
+-     GET /api/departments/{Id}
+      --header 'Authorization: Bearer 13|kcXBU5awrcEDBCdCwVbeEzgZUuOn2UxYhEDjEN5Wa5a5279a'
 
+### Delete Departments
+-     DELETE /api/departments/{Id}
+      --header 'Authorization: Bearer 13|kcXBU5awrcEDBCdCwVbeEzgZUuOn2UxYhEDjEN5Wa5a5279a'
+### Update Departments
+-     PUT /api/departments/{Id}
+      --header 'Authorization: Bearer 13|kcXBU5awrcEDBCdCwVbeEzgZUuOn2UxYhEDjEN5Wa5a5279a'
+
+      request:
+      '{
+      "name": ""
+      }'
 ## License
 This project is distributed under the MIT license. See the LICENSE file for more details.
