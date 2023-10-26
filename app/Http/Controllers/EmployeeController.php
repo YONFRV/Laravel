@@ -51,21 +51,22 @@ class EmployeeController extends Controller
             'name' => 'required|string|min:1|max:100',
             'email' => 'required|email|max:80',
             'phone' => 'required|max:15',
-            'department_id' => 'required|numeric'
+            'department_id' =>'required|numeric'
         ];
         $validator = \Validator::make($request->input(),$rules);
         if($validator->fails()){
             return response()->json([
                 'status' => false,
-                'errors' => $validator->errors()->all
+                'errors' => $validator->errors()->all()
             ],400);
         }
-        $employee = update($request->input());
+        $employee->update($request->input());
         return response()->json([
             'status' => true,
-            'message' => 'employee updated suceessfully'
+            'message' => 'Employee updated successfully'
         ],200);
     }
+
 
     public function destroy(Employee $employee)
     {
